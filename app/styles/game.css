@@ -30,5 +30,40 @@
 }
 
 .player-action-sheet {
-	
+	position: relative;
+	height: 200px;
+	width: 250px;
+}
+
+.player-action-sheet .image{
+	position: absolute;
+	height: 200px;
+	width: 250px;
+}
+
+.player-action-sheet .mainOptions{
+	margin-top: 32px;
+	margin-left: 20px;
+	position: absolute;
+}
+
+.player-action-sheet .mainOptions .button {
+	font-size: 18px;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 3px;
+}
+
+.player-action-sheet .otherOptions {
+	position: absolute;
+	height: 135px;
+	width: 130px;
+	background-color: white;
+	opacity: 0.5;
+	right: 0;
+	margin-right: 20px;
+	margin-top: 32px;
+	border-radius: 5px;
 }
