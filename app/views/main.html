@@ -9,6 +9,7 @@
       <form class="enter_name">
           <input type="text" ng-model="name" placeholder="Name">
           <input type="submit" ng-click="join()" value="Join">
+          <label ng-show="loginError" ng-model="loginError">{{loginError}}</label>
       </form>
       <div class="players_list">
         <h4 class="players_list_title">Players list:</h4>

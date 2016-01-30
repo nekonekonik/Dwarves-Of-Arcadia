@@ -38,6 +38,9 @@ angular.module('dwarvesOfArcadiaApp')
 
     this.setName = function (name) {
       if (name) {
+        if (!_session) {
+          _session = {};
+        }
         _session.name = name;
         saveToDisk(_session);
       }
