@@ -1,0 +1,30 @@
+.player-info-sheet {
+	background-color: red;
+	height: 120px;
+	width: 28%;
+	text-align: center;
+}
+
+.player-name-container {
+	background-color: white;
+	width: 80%;
+	height: 30px;
+	display: inline-block;
+	margin-top: 20px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+}
+
+.player-name {
+	margin-top: 5px;
+}
+
+.resource-icon {
+	background-color: white;
+}
+
+.resource-quantity {
+	text-align: right;
+}
