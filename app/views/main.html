@@ -5,14 +5,16 @@
   </head>
   <body>
     <div class="foreground_container">
-      <h1 class="title">Drwarves of Arcadia</h1>
+      <h1 class="title">Dwarves of Arcadia</h1>
       <form class="enter_name">
           <input type="text" ng-model="name" placeholder="Name">
-          <input type="submit" value="Join">
+          <input type="submit" ng-click="join()" value="Join">
       </form>
       <div class="players_list">
         <h4 class="players_list_title">Players list:</h4>
-        <div ng-repeat="name in names">{{name}}</div>
+        <div class="row" ng-repeat="player in players"> 
+          <label type="text">{{player}}</label>
+        </div>
       </div>
   </body>
 </html>
