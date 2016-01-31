@@ -268,10 +268,9 @@
 	vertical-align: middle;
 }
 
-.main-game-info-container .resourcesSlot {
+.main-game-info-container .resourcesToTrade button {
 	height: 50px;
-	width: 50px;
-	background-color: red;
+	width: 180px;
 	display: inline-block;
 	vertical-align: middle;
 	background-image: url("../images/goldNameBox.png");
@@ -284,6 +283,55 @@
 	top: 90px;
 	right: 50px;
 	width: 90px;
+}
+
+.resource-calculator-modal {
+	background-color: rgba(0, 0, 0, 0.7);;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+.resource-calculator-modal .resource-calculator-container {
+	position: absolute;
+	top: 250px;
+	left: 410px;
+	width: 400px;
+	height: 350px;
+	background-image: url("../images/greyEventsBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.resource-calculator-modal .resource-calculator {
+	position: absolute;
+	top: 50px;
+	left: 85px;
+}
+
+.resource-calculator-modal .resource-calculator td {
+	height: 44px;
+}
+
+.resource-calculator-modal .resource-calculator img {
+	height: 36px;
+	width: 36px;
+}
+
+.resource-calculator-modal .resource-calculator input {
+	height: 36px;
+	width: 40px;
+	font-size: 24px;
+}
+
+.resource-calculator-modal .resource-calculator-done-button {
+	position: absolute;
+	bottom: 60px;
+	left: 172px;
+	font-size: 26px;
 }
 
 .active-event-container {
