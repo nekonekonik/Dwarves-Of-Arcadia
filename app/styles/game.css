@@ -419,6 +419,7 @@
 	position: absolute;
 	height: 210px;
 	width: 310px;
+	opacity: 0.7;
 }
 
 .player-action-sheet .button:hover {
@@ -503,8 +504,15 @@
 	width: 310px;
 	height: 210px;
 	display: inline-block;
-	background-color: #a0a0a0;
+}
+
+.event-queue-container .background {
+	position: absolute;
+	width: 310px;
+	height: 210px;
+	background-color: black;
 	border-radius: 20px;
+	opacity: 0.5;
 }
 
 .event-queue-container .card1 {
@@ -513,7 +521,7 @@
 	position: absolute;
 	width: 120px;
 	height: 160px;
-	top: 5px;
+	top: 20px;
 	right: 15px;
 }
 
@@ -541,7 +549,7 @@
 	position: absolute;
 	width: 114px;
 	height: 144px;
-	top: 20px;
+	top: 40px;
 	right: 110px;
 }
 
@@ -558,7 +566,7 @@
 	width: 99px;
 	height: 129px;
 	right: 200px;
-	top: 40px;
+	top: 60px;
 }
 
 .event-queue-container .card3 img{
