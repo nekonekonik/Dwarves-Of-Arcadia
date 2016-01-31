@@ -131,12 +131,66 @@
 	position: relative;
 }
 
+.wood-mill {
+	background-image: url("../images/wood-mill-icon.png");
+	height: 50px;
+	width: 56px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.iron-forge {
+	background-image: url("../images/iron-forge-icon.png");
+	height: 50px;
+	width: 56px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.gold-mine {
+	background-image: url("../images/gold-mine-icon.png");
+	height: 50px;
+	width: 56px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
 .generator-tier2 {
 	height: 50px;
 	width: 56px;
 	display: inline-block;
 	margin: 0px 12px 0px 12px;
 	background-image: url("../images/redResGeneratorBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.lumber-mill {
+	background-image: url("../images/lumber-mill-icon.png");
+	height: 50px;
+	width: 56px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.mithril-forge {
+	background-image: url("../images/mithril-forge-icon.png");
+	height: 50px;
+	width: 56px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.treasure-mine {
+	background-image: url("../images/treasure-mine-icon.png");
+	height: 50px;
+	width: 56px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	position: relative;
