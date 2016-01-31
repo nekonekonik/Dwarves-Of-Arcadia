@@ -87,6 +87,12 @@
 	right: 17px;
 }
 
+.main-game-info img {
+	margin: 20px;
+	height: 200px;
+	width: 700px;
+}
+
 .player-info-container {
 	display: inline-block;
 }
@@ -95,6 +101,7 @@
 	position: relative;
 	height: 210px;
 	width: 310px;
+	display: inline-block;
 }
 
 .player-action-sheet .button {
@@ -169,4 +176,80 @@
 	text-align: center;
 	padding: 3px;
 	font-size: 18px;
+}
+
+.event-queue-container {
+	position: relative;
+	width: 310px;
+	height: 210px;
+	display: inline-block;
+	background-color: #a0a0a0;
+	border-radius: 20px;
+}
+
+.event-queue-container .card1 {
+	font-size: 20px;
+	z-index: 3;
+	position: absolute;
+	width: 120px;
+	height: 160px;
+	top: 5px;
+	right: 15px;
+}
+
+.event-queue-container .card1 .title {
+	top: 40px;
+}
+
+.event-queue-container .card2 .title {
+	top: 35px;
+}
+
+.event-queue-container .card3 .title {
+	top: 30px;
+}
+
+.event-queue-container .card1 img{
+	position: absolute;
+	width: 120px;
+	height: 160px;
+}
+
+.event-queue-container .card2 {
+	font-size: 18px;
+	z-index: 2;
+	position: absolute;
+	width: 114px;
+	height: 144px;
+	top: 20px;
+	right: 110px;
+}
+
+.event-queue-container .card2 img{
+	position: absolute;
+	width: 114px;
+	height: 144px;
+}
+
+.event-queue-container .card3 {
+	font-size: 16px;
+	z-index: 1;
+	position: absolute;
+	width: 99px;
+	height: 129px;
+	right: 200px;
+	top: 40px;
+}
+
+.event-queue-container .card3 img{
+	position: absolute;
+	width: 99px;
+	height: 129px;
+}
+
+.event-queue-container .card .title {
+	position: absolute;
+	text-align: center;
+    left: 50%;
+    margin-left: -50px;
 }
