@@ -1,13 +1,14 @@
-body{
-	background: grey;
-}
-
 .foreground_container {
 	margin-top: 100px;
 }
 
 .title {
 	text-align: center;
+}
+
+.title img{
+	width: 400px;
+	height: auto;
 }
 
 .enter_name {
