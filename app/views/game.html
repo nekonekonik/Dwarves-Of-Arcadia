@@ -337,25 +337,13 @@
               <button ng-init="trade.btn2.state == false" ng-model="btn2" ng-click="trade.btn2.state = !trade.btn2.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn2.state === true]">Opponent 3</button>
             </div>
             <div class="resourcesToTrade">
-              <div class="resourcesSlot">
+              <button class="resourcesToTradePlayer">
                 
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
+              </button>
               For
-              <div class="resourcesSlot">
+              <button class="resourcesToTradeOpponent">
                 
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
+              </button>
             </div>
           </div>
           <div ng-show="userAction === 'tradeGlobal'" class="tradeEvent tradeGlobal">
@@ -366,23 +354,11 @@
               Trade with: <em>The fastest person to agree to your trade!</em>
             </div>
             <div class="resourcesToTrade">
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
+              <div class="resourcesToTradePlayer">
                 
               </div>
               For
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
+              <div class="resourcesToTradeOpponent">
                 
               </div>
             </div>
@@ -395,23 +371,11 @@
               Trade with: <em>The bank, for half the amount of resources you offer</em>
             </div>
             <div class="resourcesToTrade">
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
+              <div class="resourcesToTradePlayer">
                 
               </div>
               For
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
-                
-              </div>
-              <div class="resourcesSlot">
+              <div class="resourcesToTradeOpponent">
                 
               </div>
             </div>
@@ -635,6 +599,35 @@
             <div class="title">{{cards[3].name}}</div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="resource-calculator-modal">
+      <div class="resource-calculator-container">
+        <table class="resource-calculator">
+          <tr>
+            <td><img src="../images/wood-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/iron-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/gold-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+          </tr>
+          <tr>
+            <td><img src="../images/wood-mill-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/iron-forge-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>       
+            <td><img src="../images/gold-mine-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+          </tr>
+          <tr>
+            <td><img src="../images/lumber-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/mithril-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>       
+            <td><img src="../images/treasure-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+          </tr>
+          <tr>
+            <td><img src="../images/lumber-mill-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/mithril-forge-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>       
+            <td><img src="../images/treasure-mine-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+          </tr>
+        </table>
+        <button class="resource-calculator-done-button button">
+          Done
+        </button>
       </div>
     </div>
   </body>
