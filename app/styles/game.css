@@ -1,19 +1,19 @@
 .player-info-sheet {
-	background-color: red;
-	height: 120px;
-	width: 28%;
+	background-image: url("../images/bluePlayerBox.png");
+	background-size: cover;
+	height: 200px;
+	width: 320px;
 	text-align: center;
 }
 
 .player-name-container {
-	background-color: white;
-	width: 80%;
+	background-image: url("../images/goldNameBox.png");
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	width: 256px;
 	height: 30px;
 	display: inline-block;
-	margin-top: 20px;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
+	margin-top: 13px;
 	text-align: center;
 }
 
