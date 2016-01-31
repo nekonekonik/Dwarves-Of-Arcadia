@@ -316,6 +316,15 @@
 	opacity: 0.7;
 }
 
+.active-event-container .description {
+	z-index: 2;
+	position: absolute;
+	width: 145px;
+	font-size: 16px;
+	top: 50px;
+	left: 30px;
+}
+
 .player-action-sheet {
 	position: relative;
 	height: 210px;

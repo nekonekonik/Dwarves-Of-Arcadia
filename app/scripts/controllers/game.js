@@ -116,6 +116,23 @@ angular.module('dwarvesOfArcadiaApp')
     };
 
 
+    //EVENT CARDS
+    //stub for cards
+    $scope.cards = { 1: {name: "CardOne", description: "Card One Description", cardColor: "blue"},
+              2: {name: "CardTwo", description: "Card Two Description", cardColor: "red"},
+              3: {name: "CardThree", description: "Card Three Description", cardColor: "brown"}
+            };
+
+    $scope.hoverCard = function(cardNum) {
+      $scope.cardDescription = $scope.cards[cardNum].description;
+      $scope.showEventDescription = true;
+    };
+
+    $scope.unhoverCard = function() {
+      $scope.showEventDescription = false;
+    };
+
+
     // PLAYER
     socket.on('startGame', function(data) {
       angular.forEach(data, function(playerName, playerRsc){
@@ -140,7 +157,6 @@ angular.module('dwarvesOfArcadiaApp')
       					two: {name: $scope.playersOnGameSeq[2], rsc: data[$scope.playersOnGameSeq[2]]},
       					three: {name: $scope.playersOnGameSeq[3], rsc: data[$scope.playersOnGameSeq[3]]}
       				};
-      
     });
 
     socket.on('playersBroadcast', function(data) {
@@ -158,7 +174,11 @@ angular.module('dwarvesOfArcadiaApp')
         			player.rsc = data.update_res[fromPlayer];
         		}
         	});
-
+          //assigning colors of cards in queue
+          var temp = $scope.cards;
+          for (var i = 1; i <= 3; i++){
+            $scope.cards[i].cardColor = temp[(i+1)%3].cardColor;
+          }
         } else if (data.action === 'TradeRequest') {
         	if (data.to.indexOf(session.name()) > -1) {
 	        	// TODO: show modal for trade

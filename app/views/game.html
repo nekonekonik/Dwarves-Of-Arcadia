@@ -453,8 +453,9 @@
       <div class="active-event-container">
         <div class="wrapper">
           <img src="images/greyCard.png">
-          <div class="title">Active Event Name</div>
+          <div class="title">{{cards[1].name}}</div>
           <div class="background"></div>
+          <div ng-show="showEventDescription" class="description">{{cardDescription}}</div>
         </div>
       </div>
     </div>
@@ -600,17 +601,17 @@
           </div>
         </div>
         <div class="event-queue-container">
-          <div class="card card1">
-            <img src="images/redCard.png">
-            <div class="title">Black Swan</div>
+          <div ng-mouseover="hoverCard(1)" ng-mouseleave="unhoverCard()" class="card card1">
+            <img ng-src="images/{{cards[1].cardColor}}Card.png">
+            <div class="title">{{cards[1].name}}</div>
           </div>
-          <div class="card card2">
-            <img src="images/blueCard.png">
-            <div class="title">Good Harvest</div>
+          <div ng-mouseover="hoverCard(2)" ng-mouseleave="unhoverCard()" class="card card2">
+            <img ng-src="images/{{cards[2].cardColor}}Card.png">
+            <div class="title">{{cards[2].name}}</div>
           </div>
-          <div class="card card3">
-            <img src="images/brownCard.png">
-            <div class="title">Happy Tree Imps</div>
+          <div ng-mouseover="hoverCard(3)" ng-mouseleave="unhoverCard()" class="card card3">
+            <img ng-src="images/{{cards[3].cardColor}}Card.png">
+            <div class="title">{{cards[3].name}}</div>
           </div>
         </div>
       </div>
