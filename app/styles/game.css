@@ -263,13 +263,3 @@
     left: 50%;
     margin-left: -50px;
 }
-
-.active-event-container {
-	position: absolute;
-	right: 0;
-	width: 120px;
-	height: 160px;
-	background-color: black;
-	display: inline-block;
-	border-radius: 20px;
-}
