@@ -221,7 +221,7 @@
 	width: 700px;
 }
 
-.main-game-info-container img {
+.main-game-info-container img.main-game-info-background {
 	position: absolute;
 	height: 200px;
 	width: 700px;	
@@ -234,8 +234,21 @@
 	text-align: center;
 }
 
+.main-game-info-container .buildEvent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+}
+
 .main-game-info-container .tradeEvent .tradeWithRow {
 	margin-bottom: 8px;
+}
+
+.main-game-info-container .buildList {
+	text-align: center;
 }
 
 .main-game-info-container .resourcesToTrade {
@@ -254,14 +267,10 @@
 }
 
 .main-game-info-container .tradeButton {
-	
-position: absolute;
-	
-top: 90px;
-	
-right: 50px;
-	
-width: 90px;
+	position: absolute;
+	top: 90px;
+	right: 50px;
+	width: 90px;
 }
 
 .active-event-container {
