@@ -93,7 +93,7 @@ angular.module('dwarvesOfArcadiaApp')
   	      socket.emit('move', {from: session.name(), 
 						action:'TradeWithBank',
 						want: {},
-						target: {}
+						offer: {}
 					});
       } else if ($scope.userAction === 'tradeGlobal') {
   	      players = angular.copy($scope.playersNames);
@@ -102,7 +102,7 @@ angular.module('dwarvesOfArcadiaApp')
 	      						to: players, 
 	      					action:'TradeRequest',
 	      					want: {},
-	      					target: {}
+	      					offer: {}
 	      				});
       } else if ($scope.userAction === 'tradeOneOne') {
       	 // TODO: be able to add or decrease players ()
@@ -118,7 +118,7 @@ angular.module('dwarvesOfArcadiaApp')
       						to: players, 
       					action:'TradeRequest',
       					want: {},
-      					target: {}
+      					offer: {}
       				});
       } else {
       	console.log('error in UI');
