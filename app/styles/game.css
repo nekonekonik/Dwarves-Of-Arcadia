@@ -1,8 +1,9 @@
 .player-info-sheet {
 	background-image: url("../images/bluePlayerBox.png");
-	background-size: cover;
-	height: 200px;
-	width: 320px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 210px;
+	width: 310px;
 	text-align: center;
 }
 
@@ -21,12 +22,57 @@
 	margin-top: 5px;
 }
 
+.resource-info {
+	margin: 4px 10px 1px 10px;
+	width: 60px;
+	height: 20px;
+	background-image: url("../images/goldResourceBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
 .resource-icon {
 	background-color: white;
 }
 
 .resource-quantity {
 	text-align: right;
+	width: 30px;
+	margin-left: 25px;
+}
+
+.generator-tier1 {
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	margin: 0px 15px 0px 15px;
+	background-image: url("../images/goldResGeneratorBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.generator-tier2 {
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	margin: 0px 15px 0px 15px;
+	background-image: url("../images/redResGeneratorBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.generator-quantity {
+	background-image: url("../images/circleBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	bottom: -7px;
+	right: 14px;
 }
 
 .player-action-sheet {
