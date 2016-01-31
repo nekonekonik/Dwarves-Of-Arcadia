@@ -17,6 +17,10 @@ angular.module('dwarvesOfArcadiaApp')
     $scope.playersOnGameSeq = [];
     $scope.players = {};
 
+    $scope.generators = [
+      "Woodmill", "Iron Forge", "Gold Mine", "Lumbermill", "Mithril Forge", "Treasure Mine"
+    ];
+
     // TRADE
     $scope.trade = function() {
       $scope.userAction = 'trade';
@@ -110,6 +114,15 @@ angular.module('dwarvesOfArcadiaApp')
     $scope.destroy = function() {
       $scope.userAction = 'destroy';
     };
+
+    $scope.showDestroy = function(destroyPlayer) {
+      $scope.userAction = 'showDestroy';
+      $scope.destroyNumber = destroyPlayer;
+    }
+
+    $scope.destroyResourceButton = function(index) {
+      $scope.destroyDescription = "You are destroying his " + $scope.generators[index]; 
+    }
 
     $scope.destroyGenerator = function(generator, toPlayer) {
     	socket.emit('move', {from: session.name(), target: generator, action: 'Destroy', to: toPlayer});

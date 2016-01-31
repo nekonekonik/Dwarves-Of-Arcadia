@@ -449,6 +449,24 @@
             <button class="resourceButton">Treasure Mine <img src="../images/treasure-mine-icon.png" alt="" width="30" height"36">= 1 Gold Mine <img src="../images/gold-mine-icon.png" alt="" width="28" height"28">, 1 Treasure <img src="../images/treasure-icon.png" alt="" width="24" height"24">, 1 Wood <img src="../images/wood-icon.png" alt="" width="24" height"24">, 1 Iron <img src="../images/iron-icon.png" alt="" width="24" height"24"></button><br>
           </div>
         </div>
+        <div ng-show="userAction === 'showDestroy'" class="destroyEvent showDestroy">
+          <div class="playerActionTitle">
+            <h3>Destroy{{playersNames[destroyNumber]}}</h3>
+          </div>
+          <div class="destroyList">
+            <div class="generators">
+              <button ng-click="destroyResourceButton(0)" class="destroyResourceButton">Woodmill <img src="../images/wood-mill-icon.png" alt="" width="26" height"26"></button><br>
+              <button ng-click="destroyResourceButton(1)" class="destroyResourceButton">Iron Forge <img src="../images/iron-forge-icon.png" alt="" width="26" height"26"></button><br>
+              <button ng-click="destroyResourceButton(2)" class="destroyResourceButton">Gold Mine <img src="../images/gold-mine-icon.png" alt="" width="26" height"26"></button><br>
+            </div>
+            <div class="generators">
+              <button ng-click="destroyResourceButton(3)" class="destroyResourceButton">Lumbermill <img src="../images/lumber-mill-icon.png" alt="" width="26" height"26"></button><br>
+              <button ng-click="destroyResourceButton(4)" class="destroyResourceButton">Mithril Forge <img src="../images/mithril-forge-icon.png" alt="" width="26" height"26"></button><br>
+              <button ng-click="destroyResourceButton(5)" class="destroyResourceButton">Treasure Mine <img src="../images/treasure-mine-icon.png" alt="" width="26" height"26"></button><br>
+            </div>
+          </div>
+          <div class="description">{{destroyDescription}}</div>
+        </div>
       </div>
       <div class="active-event-container">
         <div class="wrapper">
@@ -596,7 +614,9 @@
               Get all resources produced from all your generators!
             </div>
             <div ng-show="userAction === 'destroy'" class="destroyOptions">
-              Demolish someone's resource generator!
+              <button ng-click="showDestroy(0)">Player1</button>
+              <button ng-click="showDestroy(1)">Player2</button>
+              <button ng-click="showDestroy(2)">Player3</button>
             </div>
           </div>
         </div>
