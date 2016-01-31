@@ -87,10 +87,14 @@
 	right: 17px;
 }
 
+.player-info-container {
+	display: inline-block;
+}
+
 .player-action-sheet {
 	position: relative;
-	height: 200px;
-	width: 250px;
+	height: 210px;
+	width: 310px;
 }
 
 .player-action-sheet .button {
@@ -100,8 +104,8 @@
 
 .player-action-sheet .image{
 	position: absolute;
-	height: 200px;
-	width: 250px;
+	height: 210px;
+	width: 310px;
 }
 
 .player-action-sheet .button:hover {
