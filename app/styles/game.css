@@ -107,10 +107,9 @@
 	background-image: url("../images/treasure-icon.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	width: 19px;
-	height: 17px;
+	width: 20px;
+	height: 20px;
 	position: absolute;
-	/* top: 2px; */
 	display: inline-block;
 }
 
