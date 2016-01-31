@@ -1,3 +1,6 @@
+.row {
+	margin-top: 20px;
+}
 .player-info-sheet {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -154,20 +157,32 @@
 }
 
 .main-game-info-container {
+	position: relative;
 	display:inline-block;
 	height: 200px;
 	width: 700px;
-	margin: 20px;
 }
 
-.main-game-info-container .main-game-info img {
+.main-game-info-container img {
+	position: absolute;
 	height: 200px;
 	width: 700px;
+	
 }
 
-.player-info-container {
-	margin-top: 8px;
-	position: relative;
+.main-game-info-container .event {
+	position: absolute;
+}
+
+.active-event-container {
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	border-radius: 20px;
+	margin-left: 20px;
+	background-color: #a0a0a0;
 }
 
 .player-action-sheet {
