@@ -8,7 +8,7 @@
  * Controller of the dwarvesOfArcadiaApp
  */
 angular.module('dwarvesOfArcadiaApp')
-  .controller('MainCtrl', function ($scope, socket, session) {
+  .controller('MainCtrl', function ($scope, socket, session, $location) {
 
       $scope.join = function() {
         session.setName($scope.name);
@@ -30,6 +30,10 @@ angular.module('dwarvesOfArcadiaApp')
       socket.on('playerLeft', function(data) {
         $scope.players = data;
         console.log($scope.players);
+      });
+
+      socket.on('startGame', function() {
+        $location.path('/game');
       });
 
       window.onbeforeunload = function(/*event*/) {

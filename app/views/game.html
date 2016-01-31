@@ -334,27 +334,35 @@
       </div>
       <div class="player-action-sheet">
         <img class = "image" src="images/greyEventsBox.png">
-        <div class="mainOptions">
-          <div class="button">Trade</div>
-          <div class="button">Build</div>
-          <div class="button">Gather</div>
-          <div class="button">Destroy</div>
+        <div class="mainOptions col-md-3">
+          <div class="row text-center">
+            <button ng-click="trade()">Trade</button>
+          </div>
+          <div class="row text-center"> 
+            <button ng-click="build()">Build</button>
+          </div>
+          <div class="row text-center">
+            <button ng-click="gather()">Gather</button>
+          </div>
+          <div class="row text-center">
+            <button ng-click="destroy()">Destroy</button>
+          </div>
         </div>
-        <div class="otherOptions">
-          <div class = "tradeOptions" style='display: none;'>
-            <div class="button">1-1 Trade</div>
-            <div class="button">Global Trade</div>
-            <div class="button">Bank Trade</div>
+        <div class="otherOptions col-md-9">
+          <div ng-show="userAction === 'trade'" class = "tradeOptions">
+            <button>1-1 Trade</button>
+            <button>Global Trade</button>
+            <button class="button">Bank Trade</button>
           </div>
-          <div class = "buildOptions" style="display: none;">
-            <div class="button">Build Generators</div>
-            <div class="button">Upgrade Resources</div>
-            <div class="button">Upgrade Generators</div>
+          <div ng-show="userAction === 'build'" class="buildOptions">
+            <button>Build Generators</button>
+            <button>Upgrade Resources</button>
+            <button>Upgrade Generators</button>
           </div>
-          <div class = "gatherOptions" style="display: none;">
+          <div ng-show="userAction === 'gather'" class="gatherOptions">
             Get all resources produced from all your generators!
           </div>
-          <div class = "destroyOptions" style="display: none;">
+          <div ng-show="userAction === 'destroy'" class="destroyOptions">
             Demolish someone's resource generator!
           </div>
         </div>
