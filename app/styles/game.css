@@ -217,17 +217,6 @@
 	width: 700px;
 }
 
-.main-game-info-container img {
-	position: absolute;
-	height: 200px;
-	width: 700px;
-	
-}
-
-.main-game-info-container .event {
-	position: absolute;
-}
-
 .active-event-container {
 	position: absolute;
 	display: inline-block;
@@ -237,6 +226,38 @@
 	border-radius: 20px;
 	margin-left: 20px;
 	background-color: #a0a0a0;
+}
+
+.active-event-container .wrapper {
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+
+.active-event-container img {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+}
+
+.active-event-container .title {
+	z-index: 2;
+	position: absolute;
+	font-size: 16px;
+	top: 10px;
+	left: 30px;
+}
+
+.active-event-container .background {
+	top: 45px;
+	left: 25px;
+	z-index: 1;
+	width: 150px;
+	height: 140px;
+	background-color: white;
+	position: absolute;
+	border-radius: 20px;
+	opacity: 0.7;
 }
 
 .player-action-sheet {
@@ -392,6 +413,7 @@
 .event-queue-container .card .title {
 	position: absolute;
 	text-align: center;
+	top: 50%;
     left: 50%;
-    margin-left: -50px;
+    transform: translate(-50%, -50%);
 }
