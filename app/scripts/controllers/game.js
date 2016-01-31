@@ -8,14 +8,75 @@
  * Controller of the dwarvesOfArcadiaApp
  */
 angular.module('dwarvesOfArcadiaApp')
-  .controller('GameCtrl', function ($scope, socket, session) {
+  .controller('GameCtrl', function ($rootScope, $scope, socket, session) {
 
     // variables
     // in game seq
     $scope.playersNames = [];
     // in game view seq
     $scope.playersOnGameSeq = [];
-    $scope.players = {};
+    $scope.players = { you: {name: '', rsc: {
+				      'Mithril': 0,
+				      'Gold': 3,
+				      'TreasureMine': 0,
+				      'Treasure': 0,
+				      'GoldMine': 0,
+				      'MithrilForge': 0,
+				      'IronForge': 0,
+				      'Wood': 3,
+				      'LumberMill': 0,
+				      'Iron': 3,
+				      'Lumber': 0,
+				      'Woodmill': 0
+				    }
+				 },
+      					one: {name: '', rsc: {
+				      'Mithril': 0,
+				      'Gold': 3,
+				      'TreasureMine': 0,
+				      'Treasure': 0,
+				      'GoldMine': 0,
+				      'MithrilForge': 0,
+				      'IronForge': 0,
+				      'Wood': 3,
+				      'LumberMill': 0,
+				      'Iron': 3,
+				      'Lumber': 0,
+				      'Woodmill': 0
+				    }
+				},
+      					two: {name: '', rsc: {
+				      'Mithril': 0,
+				      'Gold': 3,
+				      'TreasureMine': 0,
+				      'Treasure': 0,
+				      'GoldMine': 0,
+				      'MithrilForge': 0,
+				      'IronForge': 0,
+				      'Wood': 3,
+				      'LumberMill': 0,
+				      'Iron': 3,
+				      'Lumber': 0,
+				      'Woodmill': 0
+				    }
+				},
+      					three: {name: '', rsc: {
+				      'Mithril': 0,
+				      'Gold': 3,
+				      'TreasureMine': 0,
+				      'Treasure': 0,
+				      'GoldMine': 0,
+				      'MithrilForge': 0,
+				      'IronForge': 0,
+				      'Wood': 3,
+				      'LumberMill': 0,
+				      'Iron': 3,
+				      'Lumber': 0,
+				      'Woodmill': 0
+				    }
+				}
+      				};
+    console.log($scope);
 
     $scope.generators = [
       "Woodmill", "Iron Forge", "Gold Mine", "Lumbermill", "Mithril Forge", "Treasure Mine"
@@ -142,7 +203,7 @@ angular.module('dwarvesOfArcadiaApp')
 
     $scope.buildGeneratorView = function() {
       $scope.userAction = 'buildGenerator';
-      console.log("buildGenerator");
+      console.log('buildGenerator');
     };
 
     $scope.buildGenerator = function(generator) {
@@ -151,7 +212,7 @@ angular.module('dwarvesOfArcadiaApp')
 
     $scope.upgradeResourceView = function () {
       $scope.userAction = 'upgradeResource';
-      console.log("upgradeRes");
+      console.log('upgradeRes');
     };
 
     $scope.upgradeResource = function (resource) {
@@ -160,7 +221,7 @@ angular.module('dwarvesOfArcadiaApp')
 
     $scope.upgradeGeneratorView = function () {
       $scope.userAction = 'upgradeGenerator';
-      console.log("upgradeGenerator");
+      console.log('upgradeGenerator');
     };
 
     $scope.upgradeGenerator = function (generator) {
@@ -177,12 +238,12 @@ angular.module('dwarvesOfArcadiaApp')
       $scope.userAction = 'showDestroy';
       $scope.destroyNumber = destroyPlayer;
       $scope.toDestroyPlayer = $scope.playersOnGameSeq[destroyPlayer];
-    }
+    };
 
     $scope.destroyResourceButton = function(index) {
       $scope.toDestroyGenerator = $scope.generators[index];
       $scope.destroyDescription = "You are destroying his " + $scope.toDestroyGenerator; 
-    }
+    };
 
     $scope.destroyGenerator = function(generator, toPlayer) {
       if(toPlayer && generator){
@@ -195,9 +256,9 @@ angular.module('dwarvesOfArcadiaApp')
 
     //EVENT CARDS
     //stub for cards
-    $scope.cards = { 1: {name: "CardOne", description: "Card One Description", cardColor: "blue"},
-              2: {name: "CardTwo", description: "Card Two Description", cardColor: "red"},
-              3: {name: "CardThree", description: "Card Three Description", cardColor: "brown"}
+    $scope.cards = { 1: {name: 'CardOne', description: 'Card One Description', cardColor: 'blue'},
+              2: {name: 'CardTwo', description: 'Card Two Description', cardColor: 'red'},
+              3: {name: 'CardThree', description: 'Card Three Description', cardColor: 'brown'}
             };
 
     $scope.hoverCard = function(cardNum) {
@@ -212,8 +273,10 @@ angular.module('dwarvesOfArcadiaApp')
 
     // PLAYER
     socket.on('startGame', function(data) {
-      angular.forEach(data, function(playerName, playerRsc){
+      console.log(data);
+      angular.forEach(data, function(playerRsc, playerName){
       	console.log(playerRsc);
+      	console.log(playerName);
         $scope.playersNames.push(playerName);
       });
 
@@ -234,6 +297,20 @@ angular.module('dwarvesOfArcadiaApp')
       					two: {name: $scope.playersOnGameSeq[2], rsc: data[$scope.playersOnGameSeq[2]]},
       					three: {name: $scope.playersOnGameSeq[3], rsc: data[$scope.playersOnGameSeq[3]]}
       				};
+
+      console.log('players', $scope.players);
+      console.log($scope.players.you.rsc.Wood);
+      $scope.players.you.rsc.Mithril = 100;
+
+      $scope.$apply(function () {
+      	$scope.players = { you: {name: $scope.playersOnGameSeq[0], rsc: data[$scope.playersOnGameSeq[0]]},
+      					one: {name: $scope.playersOnGameSeq[1], rsc: data[$scope.playersOnGameSeq[1]]},
+      					two: {name: $scope.playersOnGameSeq[2], rsc: data[$scope.playersOnGameSeq[2]]},
+      					three: {name: $scope.playersOnGameSeq[3], rsc: data[$scope.playersOnGameSeq[3]]}
+      				};
+      });
+
+      console.log($scope);
     });
 
     socket.on('playersBroadcast', function(data) {
@@ -245,11 +322,14 @@ angular.module('dwarvesOfArcadiaApp')
         		// TODO: display who's turn
         	}
         } else if (data.action === 'Update') {
-        	var fromPlayer = data.from;
-        	angular.forEach($scope.players, function(player) {
-        		if (player.name === fromPlayer ) {
-        			player.rsc = data.update_res[fromPlayer];
-        		}
+        	angular.forEach(data.update_res, function(playerRsc, playerName) {
+        		angular.forEach($scope.players, function(player) {
+        			if (playerName === player.name) {
+        				player.rsc = playerRsc;
+ 						console.log(playerName);
+ 						console.log(player.rsc);
+        			}
+        		});
         	});
           //assigning colors of cards in queue
           var temp = $scope.cards;
