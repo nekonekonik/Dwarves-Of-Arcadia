@@ -2,21 +2,26 @@
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 210px;
-	width: 310px;
+	width: 290px;
 	text-align: center;
 	display: inline-block;
+	margin: 0 4px 0 4px;
 }
 
-#opponent-1 {
+.player-info-sheet#opponent-1 {
 	background-image: url("../images/bluePlayerBox.png");
 }
 
-#opponent-2 {
+.player-info-sheet#opponent-2 {
 	background-image: url("../images/redPlayerBox.png");
 }
 
-#opponent-3 {
+.player-info-sheet#opponent-3 {
 	background-image: url("../images/greenPlayerBox.png");
+}
+
+.player-info-sheet#player {
+	background-image: url("../images/purplePlayerBox.png");
 }
 
 .player-name-container {
@@ -30,7 +35,7 @@
 	text-align: center;
 }
 
-.player-name {
+.player-name-container .player-name {
 	margin-top: 5px;
 }
 
@@ -42,16 +47,78 @@
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	display: inline-block;
+	position: relative;
 }
 
-.resource-icon {
-	background-color: white;
+.resource-icon-wood {
+	background-image: url("../images/wood-icon.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 19px;
+	height: 19px;
+	position: absolute;
+	display: inline-block;
 }
 
-.resource-quantity {
+.resource-icon-lumber {
+	background-image: url("../images/lumber-icon.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 22px;
+	height: 21px;
+	position: absolute;
+	display: inline-block;
+}
+
+.resource-icon-iron {
+	background-image: url("../images/iron-icon.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	bottom: -1px;
+	display: inline-block;
+}
+
+.resource-icon-mithril {
+	background-image: url("../images/mithril-icon.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 22px;
+	height: 26px;
+	position: absolute;
+	top: -2px;
+	display: inline-block;
+}
+
+.resource-icon-gold {
+	background-image: url("../images/gold-icon.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 19px;
+	height: 17px;
+	position: absolute;
+	top: 2px;
+	display: inline-block;
+}
+
+.resource-icon-treasure {
+	background-image: url("../images/treasure-icon.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 19px;
+	height: 17px;
+	position: absolute;
+	/* top: 2px; */
+	display: inline-block;
+}
+
+.resource-info .resource-quantity {
 	text-align: right;
 	width: 30px;
 	margin-left: 25px;
+	display: inline-block;
 }
 
 .generator-tier1 {
@@ -88,13 +155,16 @@
 }
 
 .player-info-container {
-	display: inline-block;
+	margin-top: 8px;
+	position: relative;
 }
 
 .player-action-sheet {
-	position: relative;
+	position: absolute;
 	height: 210px;
 	width: 310px;
+	bottom: 0;
+	display: inline-block;
 }
 
 .player-action-sheet .button {
