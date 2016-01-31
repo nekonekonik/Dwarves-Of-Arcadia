@@ -91,8 +91,14 @@
 	right: 17px;
 }
 
-.main-game-info img {
+.main-game-info-container {
+	display:inline-block;
+	height: 200px;
+	width: 700px;
 	margin: 20px;
+}
+
+.main-game-info-container .main-game-info img {
 	height: 200px;
 	width: 700px;
 }
@@ -256,4 +262,14 @@
 	text-align: center;
     left: 50%;
     margin-left: -50px;
+}
+
+.active-event-container {
+	position: absolute;
+	right: 0;
+	width: 120px;
+	height: 160px;
+	background-color: black;
+	display: inline-block;
+	border-radius: 20px;
 }
