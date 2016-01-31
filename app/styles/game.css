@@ -481,3 +481,11 @@
     left: 50%;
     margin-left: -50px;
 }
+
+.button-disabled {
+	opacity: 1;
+}
+
+.button-enabled {
+	opacity: 0.7;
+}
