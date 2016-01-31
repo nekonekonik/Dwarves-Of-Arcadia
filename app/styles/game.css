@@ -19,6 +19,10 @@
 	background-image: url("../images/greenPlayerBox.png");
 }
 
+#player {
+	background-image: url("../images/purplePlayerBox.png");
+}
+
 .player-name-container {
 	background-image: url("../images/goldNameBox.png");
 	background-size: 100% 100%;
