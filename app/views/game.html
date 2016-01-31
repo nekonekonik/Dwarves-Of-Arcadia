@@ -8,28 +8,29 @@
       <!-- not sure if this is supposed to be repeated by angular; i'll put one here as placeholder -->
       <div class="player-info-sheet" id="opponent-1">
         <div class="player-name-container">
-          <div class="player-name">stubname</div>
+          <div class="player-name">
+            <label>{{players.one.name}}</div>
         </div>
         <div class="tier1-resources-container">
           <div class="resource-info">
             <div class="resource-icon-wood">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.one.rsc.Wood}}</label>
             </div>
           </div>
           <div class="resource-info iron">
             <div class="resource-icon-iron">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.one.rsc.Iron}}</label>
             </div>
           </div>
           <div class="resource-info gold">
             <div class="resource-icon-gold">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.one.rsc.Gold}}</label>
             </div>
           </div>
         </div>
@@ -39,7 +40,7 @@
               
             </div>
             <div class="generator-quantity wood-mill">
-              0
+              <label>{{players.one.rsc.Woodmill}}</label>
             </div>
           </div>
           <div class="generator-tier1">
@@ -47,7 +48,7 @@
               
             </div>
             <div class="generator-quantity iron-forge">
-              1
+              <label>{{players.one.rsc.IronForge}}</label>
             </div>            
           </div>
           <div class="generator-tier1">
@@ -55,7 +56,7 @@
               
             </div>
             <div class="generator-quantity gold-mine">
-              0
+              <label>{{players.one.rsc.GoldMine}}</label>
             </div>           
           </div>
         </div>
@@ -65,21 +66,21 @@
             <div class="resource-icon-lumber">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.one.rsc.Lumber}}</label>
             </div>
           </div>
           <div class="resource-info mithril">
             <div class="resource-icon-mithril">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.one.rsc.Mithril}}</label>
             </div>
           </div>
           <div class="resource-info treasure">
             <div class="resource-icon-treasure">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.one.rsc.Treasure}}</label>
             </div>
           </div>
         </div>
@@ -89,7 +90,7 @@
               
             </div>
             <div class="generator-quantity lumber-mill">
-              0
+              <label>{{players.one.rsc.LumberMill}}</label>
             </div>
           </div>
           <div class="generator-tier2"> 
@@ -97,7 +98,7 @@
               
             </div>
             <div class="generator-quantity mithril-forge">
-              0
+              <label>{{players.one.rsc.MithrilForge}}</label>
             </div>
           </div>
           <div class="generator-tier2">
@@ -105,13 +106,15 @@
               
             </div>
             <div class="generator-quantity treasure-mine">
-              2
+              <label>{{players.one.rsc.TreasureMine}}</label>
             </div>
           </div>
         </div>
       </div><div class="player-info-sheet" id="opponent-2">
         <div class="player-name-container">
-          <div class="player-name">stubname2</div>
+          <div class="player-name">
+            <label>{{players.two.name}}</label>
+          </div>
         </div>
         <div class="tier1-resources-container">
           <div class="resource-info wood">
@@ -119,21 +122,21 @@
             </div>
 
             <div class="resource-quantity">
-              1
+              <label>{{players.two.rsc.Wood}}</label>
             </div>
           </div>
           <div class="resource-info iron">
             <div class="resource-icon-iron">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.two.rsc.Iron}}</label>
             </div>
           </div>
           <div class="resource-info gold">
             <div class="resource-icon-gold">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.two.rsc.Gold}}</label>
             </div>
           </div>
         </div>
@@ -143,7 +146,7 @@
               
             </div>
             <div class="generator-quantity wood-mill">
-              1
+              <label>{{players.two.rsc.Woodmill}}</label>
             </div>
           </div>
           <div class="generator-tier1">
@@ -151,7 +154,7 @@
               
             </div>
             <div class="generator-quantity iron-forge">
-              2
+              <label>{{players.two.rsc.IronForge}}</label>
             </div>            
           </div>
           <div class="generator-tier1">
@@ -159,7 +162,7 @@
               
             </div>
             <div class="generator-quantity gold-mine">
-              0
+              <label>{{players.two.rsc.GoldMine}}</label>
             </div>           
           </div>
         </div>
@@ -168,21 +171,21 @@
             <div class="resource-icon-lumber">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.two.rsc.Lumber}}</label>
             </div>
           </div>
           <div class="resource-info mithril">
             <div class="resource-icon-mithril">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.two.rsc.Mithril}}</label>
             </div>
           </div>
           <div class="resource-info treasure">
             <div class="resource-icon-treasure">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.two.rsc.Treasure}}</label>
             </div>
           </div>
         </div>
@@ -192,7 +195,7 @@
               
             </div>
             <div class="generator-quantity lumber-mill">
-              0
+              <label>{{players.two.rsc.LumberMill}}</label>
             </div>
           </div>
           <div class="generator-tier2"> 
@@ -200,7 +203,7 @@
               
             </div>
             <div class="generator-quantity mithril-forge">
-              0
+              <label>{{players.two.rsc.MithrilForge}}</label>
             </div>
           </div>
           <div class="generator-tier2">
@@ -208,13 +211,15 @@
               
             </div>
             <div class="generator-quantity treasure-mine">
-              1
+              <label>{{players.two.rsc.TreasureMine}}</label>
             </div>
           </div>
         </div>
       </div><div class="player-info-sheet" id="opponent-3">
         <div class="player-name-container">
-          <div class="player-name">stubname3</div>
+          <div class="player-name">
+            <label>{{players.three.name}}</label>
+          </div>
         </div>
         <div class="tier1-resources-container">
           <div class="resource-info wood">
@@ -222,21 +227,21 @@
             </div>
 
             <div class="resource-quantity">
-              1
+              <label>{{players.three.rsc.Wood}}</label>
             </div>
           </div>
           <div class="resource-info iron">
             <div class="resource-icon-iron">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.three.rsc.Iron}}</label>
             </div>
           </div>
           <div class="resource-info gold">
             <div class="resource-icon-gold">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.three.rsc.Gold}}</label>
             </div>
           </div>
         </div>
@@ -246,7 +251,7 @@
               
             </div>
             <div class="generator-quantity wood-mill">
-              1
+              <label>{{players.three.rsc.Woodmill}}</label>
             </div>
           </div>
           <div class="generator-tier1">
@@ -254,7 +259,7 @@
               
             </div>
             <div class="generator-quantity iron-forge">
-              2
+              <label>{{players.three.rsc.IronForge}}</label>
             </div>            
           </div>
           <div class="generator-tier1">
@@ -262,7 +267,7 @@
               
             </div>
             <div class="generator-quantity gold-mine">
-              1
+              <label>{{players.three.rsc.GoldMine}}</label>
             </div>           
           </div>
         </div>
@@ -271,21 +276,21 @@
             <div class="resource-icon-lumber">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.three.rsc.Lumber}}</label>
             </div>
           </div>
           <div class="resource-info mithril">
             <div class="resource-icon-mithril">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.three.rsc.Mithril}}</label>
             </div>
           </div>
           <div class="resource-info treasure">
             <div class="resource-icon-treasure">
             </div>
             <div class="resource-quantity">
-              1
+              <label>{{players.three.rsc.Treasure}}</label>
             </div>
           </div>
         </div>
@@ -295,7 +300,7 @@
               
             </div>
             <div class="generator-quantity lumber-mill">
-              0
+              <label>{{players.three.rsc.Lumber}}</label>
             </div>
           </div>
           <div class="generator-tier2"> 
@@ -303,7 +308,7 @@
               
             </div>
             <div class="generator-quantity mithril-forge">
-              1
+              <label>{{players.three.rsc.MithrilForge}}</label>
             </div>
           </div>
           <div class="generator-tier2">
@@ -311,7 +316,7 @@
               
             </div>
             <div class="generator-quantity treasure-mine">
-              0
+              <label>{{players.three.rsc.TreasureMine}}</label>
             </div>
           </div>
         </div>
@@ -456,28 +461,30 @@
     <div class="row">
       <div class="player-info-sheet" id="player">
           <div class="player-name-container">
-            <div class="player-name">YOU</div>
+            <div class="player-name">
+              <label>YOU -{{players.you.name}}</label>
+            </div>
           </div>
           <div class="tier1-resources-container">
             <div class="resource-info wood">
               <div class="resource-icon-wood">
               </div>
               <div class="resource-quantity">
-                1
+                <label>{{players.you.rsc.Wood}}</label>
               </div>
             </div>
             <div class="resource-info iron">
               <div class="resource-icon-iron">
               </div>
               <div class="resource-quantity">
-                1
+                <label>{{players.you.rsc.Iron}}</label>
               </div>
             </div>
             <div class="resource-info gold">
               <div class="resource-icon-gold">
               </div>
               <div class="resource-quantity">
-                1
+                <label>{{players.you.rsc.Gold}}</label>
               </div>
             </div>
           </div>
@@ -487,7 +494,7 @@
                 
               </div>
               <div class="generator-quantity wood-mill">
-                1
+                <label>{{players.you.rsc.Woodmill}}</label>
               </div>
             </div>
           <div class="generator-tier1">
@@ -495,7 +502,7 @@
               
             </div>
               <div class="generator-quantity iron-forge">
-                2
+                <label>{{players.you.rsc.IronForge}}</label>
               </div>            
             </div>
           <div class="generator-tier1">
@@ -503,7 +510,7 @@
               
             </div>
               <div class="generator-quantity gold-mine">
-                1
+                <label>{{players.you.rsc.GoldMine}}</label>
               </div>           
             </div>
           </div>
@@ -512,21 +519,21 @@
               <div class="resource-icon-lumber">
               </div>
               <div class="resource-quantity">
-                1
+                <label>{{players.you.rsc.Lumber}}</label>
               </div>
             </div>
             <div class="resource-info mithril">
               <div class="resource-icon-mithril">
               </div>
               <div class="resource-quantity">
-                1
+                <label>{{players.you.rsc.Mithril}}</label>
               </div>
             </div>
             <div class="resource-info treasure">
               <div class="resource-icon-treasure">
               </div>
               <div class="resource-quantity">
-                1
+                <label>{{players.you.rsc.Treasure}}</label>
               </div>
             </div>
           </div>
@@ -536,7 +543,7 @@
                 
               </div>
               <div class="generator-quantity lumber-mill">
-                0
+                <label>{{players.you.rsc.LumberMill}}</label>
               </div>
             </div>
             <div class="generator-tier2"> 
@@ -544,7 +551,7 @@
                 
               </div>
               <div class="generator-quantity mithril-forge">
-                1
+                <label>{{players.you.rsc.MithrilForge}}</label>
               </div>
             </div>
           <div class="generator-tier2">
@@ -552,7 +559,7 @@
               
             </div>
               <div class="generator-quantity treasure-mine">
-                0
+                <label>{{players.you.rsc.TreasureMine}}</label>
               </div>
             </div>
           </div>
@@ -575,14 +582,14 @@
           </div>
           <div class="otherOptions col-md-9">
             <div ng-show="userAction === 'trade'" class = "tradeOptions">
-              <button ng-click="tradeOneOne()">1-1 Trade</button>
-              <button ng-click="tradeGlobal()">Global Trade</button>
-              <button ng-click="tradeBank()" class="button">Bank Trade</button>
+              <button ng-click="tradeOneOneView()">1-1 Trade</button>
+              <button ng-click="tradeGlobalView()">Global Trade</button>
+              <button ng-click="tradeBankView()" class="button">Bank Trade</button>
             </div>
             <div ng-show="userAction === 'build'" class="buildOptions">
-              <button ngClick="buildGenerator()">Build Generators</button>
-              <button ngClick="upgradeResource()">Upgrade Resources</button>
-              <button ngClick="upgradeGenerator()">Upgrade Generators</button>
+              <button ng-click="buildGeneratorView()">Build Generators</button>
+              <button ng-click="upgradeResourceView()">Upgrade Resources</button>
+              <button ng-click="upgradeGeneratorView()">Upgrade Generators</button>
             </div>
             <div ng-show="userAction === 'gather'" class="gatherOptions">
               Get all resources produced from all your generators!

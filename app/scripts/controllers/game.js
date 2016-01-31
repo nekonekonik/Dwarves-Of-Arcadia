@@ -22,9 +22,11 @@ angular.module('dwarvesOfArcadiaApp')
       $scope.userAction = 'trade';
     };
 
-    $scope.trade1to1 = function() {
+    $scope.tradeOneOneView = function() {
       $scope.userAction = 'tradeOneOne';
+    };
 
+    $scope.tradeOneOne = function() {
       // TODO: get selected players
       var players = [];
       socket.emit('move', {from: session.name(), 
@@ -35,9 +37,11 @@ angular.module('dwarvesOfArcadiaApp')
       				});
     };
 
-    $scope.globalTrade = function() {
+    $scope.tradeGlobalView = function() {
       $scope.userAction = 'tradeGlobal';
+    };
 
+    $scope.tradeGlobal = function() {
       var players = angular.copy($scope.playersNames);
       players.splice(session.name(), 1);
       socket.emit('move', {from: session.name(), 
@@ -48,9 +52,12 @@ angular.module('dwarvesOfArcadiaApp')
       				});
     };
 
-    $scope.tradeWithBank = function() {
-      $scope.userAction = 'tradeBank';
 
+    $scope.tradeBankView = function() {
+      $scope.userAction = 'tradeBank';
+    };
+
+    $scope.tradeBank = function() {
       socket.emit('move', {from: session.name(), 
 							action:'TradeWithBank',
 							want: {},
@@ -71,21 +78,30 @@ angular.module('dwarvesOfArcadiaApp')
       $scope.userAction = 'build';
     };
 
-    $scope.buildGenerator = function(generator) {
+    $scope.buildGeneratorView = function() {
       $scope.userAction = 'buildGenerator';
       console.log("buildGenerator");
+    };
+
+    $scope.buildGenerator = function(generator) {
       socket.emit('move', {from: session.name(), target: generator, action: 'Build'});
     };
 
-    $scope.upgradeResource = function (resource) {
+    $scope.upgradeResourceView = function () {
       $scope.userAction = 'upgradeResource';
       console.log("upgradeRes");
+    };
+
+    $scope.upgradeResource = function (resource) {
       socket.emit('move', {from: session.name(), target: resource, action: 'UpgradeResource'});
     };
 
-    $scope.upgradeGenerator = function (generator) {
+    $scope.upgradeGeneratorView = function () {
       $scope.userAction = 'upgradeGenerator';
       console.log("upgradeGenerator");
+    };
+
+    $scope.upgradeGenerator = function (generator) {
       socket.emit('move', {from: session.name(), target: generator, action: 'UpgradeResourceGenerator'});
     };
 
