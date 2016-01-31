@@ -265,27 +265,20 @@
     </div>
     <div class="main-game-info-container">
       <div class="main-game-info">
-        
+        <img src="images/newspaper.png">
       </div>
     </div>
-    <div class="event-container">
-      <div class="active-event-container">
-        
-      </div>
-      <div class="event-queue-container">
-        
-      </div>
+    <div class="active-event-container">
+      
     </div>
     <div class="player-info-container">
-      <div class="player-info-sheet" id="player">
+      </div><div class="player-info-sheet" id="player">
         <div class="player-name-container">
-          <div class="player-name">stubname</div>
+          <div class="player-name">YOU</div>
         </div>
         <div class="tier1-resources-container">
           <div class="resource-info wood">
             <div class="resource-icon-wood">
-            </div>
-
             <div class="resource-quantity wood">
               1
             </div>
@@ -308,21 +301,20 @@
         <div class="tier1-generator-container">
           <div class="generator-tier1 wood-mill">
             <div class="generator-quantity wood-mill">
-              0
+              1
             </div>
           </div>
           <div class="generator-tier1 iron-forge">
             <div class="generator-quantity iron-forge">
-              1
+              2
             </div>            
           </div>
           <div class="generator-tier1 gold-mine">
             <div class="generator-quantity gold-mine">
-              0
+              1
             </div>           
           </div>
         </div>
-
         <div class="tier2-resources-container">
           <div class="resource-info lumber">
             <div class="resource-icon-lumber">
@@ -354,40 +346,64 @@
           </div>
           <div class="generator-tier2 mithril-forge">
             <div class="generator-quantity mithril-forge">
-              0
+              1
             </div>
           </div>
           <div class="generator-tier2 treasure-mine">
             <div class="generator-quantity treasure-mine">
-              2
+              0
             </div>
           </div>
         </div>
-      </div><div class="player-action-sheet">
+      </div>
+      </div>
+      <div class="player-action-sheet">
         <img class = "image" src="images/greyEventsBox.png">
-        <div class="mainOptions">
-          <div class="button">Trade</div>
-          <div class="button">Build</div>
-          <div class="button">Gather</div>
-          <div class="button">Destroy</div>
+        <div class="mainOptions col-md-3">
+          <div class="row text-center">
+            <button ng-click="trade()">Trade</button>
+          </div>
+          <div class="row text-center"> 
+            <button ng-click="build()">Build</button>
+          </div>
+          <div class="row text-center">
+            <button ng-click="gather()">Gather</button>
+          </div>
+          <div class="row text-center">
+            <button ng-click="destroy()">Destroy</button>
+          </div>
         </div>
-        <div class="otherOptions">
-          <div class = "tradeOptions" style='display: none;'>
-            <div class="button">1-1 Trade</div>
-            <div class="button">Global Trade</div>
-            <div class="button">Bank Trade</div>
+        <div class="otherOptions col-md-9">
+          <div ng-show="userAction === 'trade'" class = "tradeOptions">
+            <button>1-1 Trade</button>
+            <button>Global Trade</button>
+            <button class="button">Bank Trade</button>
           </div>
-          <div class = "buildOptions" style="display: none;">
-            <div class="button">Build Generators</div>
-            <div class="button">Upgrade Resources</div>
-            <div class="button">Upgrade Generators</div>
+          <div ng-show="userAction === 'build'" class="buildOptions">
+            <button>Build Generators</button>
+            <button>Upgrade Resources</button>
+            <button>Upgrade Generators</button>
           </div>
-          <div class = "gatherOptions" style="display: none;">
+          <div ng-show="userAction === 'gather'" class="gatherOptions">
             Get all resources produced from all your generators!
           </div>
-          <div class = "destroyOptions" style="display: none;">
+          <div ng-show="userAction === 'destroy'" class="destroyOptions">
             Demolish someone's resource generator!
           </div>
+        </div>
+      </div>
+      <div class="event-queue-container">
+        <div class="card card1">
+          <img src="images/redCard.png">
+          <div class="title">Black Swan</div>
+        </div>
+        <div class="card card2">
+          <img src="images/blueCard.png">
+          <div class="title">Good Harvest</div>
+        </div>
+        <div class="card card3">
+          <img src="images/brownCard.png">
+          <div class="title">Happy Tree Imps</div>
         </div>
       </div>
     </div>
