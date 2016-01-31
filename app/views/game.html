@@ -319,6 +319,9 @@
     </div>
     <div class="row">
       <div class="main-game-info-container">
+        <div ng-show="userAction === tradeOneOnOne">
+          Trade with:
+        </div>
       </div>
       <div class="active-event-container">
         <div class="wrapper">
@@ -450,9 +453,9 @@
           </div>
           <div class="otherOptions col-md-9">
             <div ng-show="userAction === 'trade'" class = "tradeOptions">
-              <button>1-1 Trade</button>
-              <button>Global Trade</button>
-              <button class="button">Bank Trade</button>
+              <button ng-click="tradeOneOnOne()">1-1 Trade</button>
+              <button ng-click="tradeGlobal()">Global Trade</button>
+              <button ng-click="tradeBank()" class="button">Bank Trade</button>
             </div>
             <div ng-show="userAction === 'build'" class="buildOptions">
               <button>Build Generators</button>
