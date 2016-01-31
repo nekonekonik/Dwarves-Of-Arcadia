@@ -70,6 +70,7 @@ body {
     background-image: url("../images/woodTexture.jpg");
     padding-bottom: 30px;
     padding-left: 35px;
+    border-radius: 20px;
   }
 
   /* Remove the padding we set earlier */
