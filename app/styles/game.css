@@ -1,10 +1,22 @@
 .player-info-sheet {
-	background-image: url("../images/bluePlayerBox.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 210px;
 	width: 310px;
 	text-align: center;
+	display: inline-block;
+}
+
+#opponent-1 {
+	background-image: url("../images/bluePlayerBox.png");
+}
+
+#opponent-2 {
+	background-image: url("../images/redPlayerBox.png");
+}
+
+#opponent-3 {
+	background-image: url("../images/greenPlayerBox.png");
 }
 
 .player-name-container {
@@ -44,9 +56,9 @@
 
 .generator-tier1 {
 	height: 50px;
-	width: 50px;
+	width: 56px;
 	display: inline-block;
-	margin: 0px 15px 0px 15px;
+	margin: 0px 12px 0px 12px;
 	background-image: url("../images/goldResGeneratorBox.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -55,9 +67,9 @@
 
 .generator-tier2 {
 	height: 50px;
-	width: 50px;
+	width: 56px;
 	display: inline-block;
-	margin: 0px 15px 0px 15px;
+	margin: 0px 12px 0px 12px;
 	background-image: url("../images/redResGeneratorBox.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -72,7 +84,7 @@
 	width: 22px;
 	position: absolute;
 	bottom: -7px;
-	right: 14px;
+	right: 17px;
 }
 
 .player-action-sheet {
@@ -154,5 +166,3 @@
 	padding: 3px;
 	font-size: 18px;
 }
-
-
