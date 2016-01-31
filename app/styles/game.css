@@ -227,10 +227,6 @@
 	width: 700px;	
 }
 
-.main-game-info-container .event {
-	position: absolute;
-}
-
 .main-game-info-container .tradeEvent {
 	position: absolute;
 	top: 30px;
