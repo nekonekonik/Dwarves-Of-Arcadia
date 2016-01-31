@@ -26,47 +26,55 @@ angular.module('dwarvesOfArcadiaApp')
       $scope.userAction = 'trade';
     };
 
-    $scope.tradeOneOneView = function() {
-      $scope.userAction = 'tradeOneOne';
-    };
-
-    $scope.tradeOneOne = function() {
-      // TODO: get selected players
+    $scope.tradeClicked = function() {
       var players = [];
-      socket.emit('move', {from: session.name(), 
+      if ($scope.userAction === 'tradeBank') {
+  	      socket.emit('move', {from: session.name(), 
+						action:'TradeWithBank',
+						want: {},
+						target: {}
+					});
+      } else if ($scope.userAction === 'tradeGlobal') {
+  	      players = angular.copy($scope.playersNames);
+	      players.splice(session.name(), 1);
+	      socket.emit('move', {from: session.name(), 
+	      						to: players, 
+	      					action:'TradeRequest',
+	      					want: {},
+	      					target: {}
+	      				});
+      } else if ($scope.userAction === 'tradeOneOne') {
+      	 // TODO: be able to add or decrease players ()
+      	 if ($scope.trade.btn0.state) {
+      	 	players.push($scope.playersOnGameSeq[0]);
+      	 } else if ($scope.trade.btn1.state) {
+      	 	players.push($scope.playersOnGameSeq[1]);
+      	 } else if ($scope.trade.btn2.state) {
+      	 	players.push($scope.playersOnGameSeq[2]);
+      	 }
+
+        socket.emit('move', {from: session.name(), 
       						to: players, 
       					action:'TradeRequest',
       					want: {},
       					target: {}
       				});
+      } else {
+      	console.log('error in UI');
+      }
+
+    };
+
+    $scope.tradeOneOneView = function() {
+      $scope.userAction = 'tradeOneOne';
     };
 
     $scope.tradeGlobalView = function() {
       $scope.userAction = 'tradeGlobal';
     };
 
-    $scope.tradeGlobal = function() {
-      var players = angular.copy($scope.playersNames);
-      players.splice(session.name(), 1);
-      socket.emit('move', {from: session.name(), 
-      						to: players, 
-      					action:'TradeRequest',
-      					want: {},
-      					target: {}
-      				});
-    };
-
-
     $scope.tradeBankView = function() {
       $scope.userAction = 'tradeBank';
-    };
-
-    $scope.tradeBank = function() {
-      socket.emit('move', {from: session.name(), 
-							action:'TradeWithBank',
-							want: {},
-							target: {}
-						});
     };
 
 
