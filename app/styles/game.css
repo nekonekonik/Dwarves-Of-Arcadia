@@ -220,12 +220,37 @@
 .main-game-info-container img {
 	position: absolute;
 	height: 200px;
-	width: 700px;
-	
+	width: 700px;	
 }
 
 .main-game-info-container .event {
 	position: absolute;
+}
+
+.main-game-info-container .tradeOneOnOne {
+	position: absolute;
+	top: 45px;
+	left: 184px;
+	text-align: center;
+}
+
+.main-game-info-container .tradeOneOnOne .tradeWithRow {
+	margin-bottom: 8px;
+}
+
+.resourcesToTrade {
+	vertical-align: middle;
+}
+
+.resourcesSlot {
+	height: 50px;
+	width: 50px;
+	background-color: red;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url("../images/goldNameBox.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 
 .active-event-container {
