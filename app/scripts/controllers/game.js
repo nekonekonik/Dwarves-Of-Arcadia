@@ -126,14 +126,20 @@ angular.module('dwarvesOfArcadiaApp')
     $scope.showDestroy = function(destroyPlayer) {
       $scope.userAction = 'showDestroy';
       $scope.destroyNumber = destroyPlayer;
+      $scope.toDestroyPlayer = $playersNames[destroyPlayer];
     }
 
     $scope.destroyResourceButton = function(index) {
-      $scope.destroyDescription = "You are destroying his " + $scope.generators[index]; 
+      $scope.toDestroyGenerator = $scope.generators[index];
+      $scope.destroyDescription = "You are destroying his " + $scope.toDestroyGenerator; 
     }
 
     $scope.destroyGenerator = function(generator, toPlayer) {
-    	socket.emit('move', {from: session.name(), target: generator, action: 'Destroy', to: toPlayer});
+      if(toPlayer && generator){
+    	 socket.emit('move', {from: session.name(), target: generator, action: 'Destroy', to: toPlayer});
+      } else {
+        console.log("Empty player or empty generator fields");
+      }
     };
 
 
