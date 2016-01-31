@@ -78,6 +78,56 @@ angular.module('dwarvesOfArcadiaApp')
     };
 
 
+
+    $scope.getSellingToPlayer = function(player){
+      $scope.sellingToPlayer = player;
+    }        
+
+    $scope.showCalculator = function(player, tradeType) {
+      if (player && tradeType){
+        $scope.currentActiveTrader = player;
+        $scope.currentTradeType = tradeType;
+        $scope.userAction = 'showCalculator';
+      } else {
+        alert("Empty player");
+      }
+    }
+
+    $scope.playerResourcesForTrade = {};
+    $scope.opponentResourcesForTrade = {};
+    $scope.closeCalculator = function(tradeType) {
+      if ($scope.currentActiveTrader == 'Me') {
+        $scope.playerResourcesForTrade = angular.copy($scope.totalResources);
+        var tradeOffer = "";
+        for (var resourceName in $scope.playerResourcesForTrade) {
+            var resource = $scope.playerResourcesForTrade[resourceName];
+            if (resource.amount > 0) {
+              tradeOffer += resource.amount + " " + resourceName + ", ";
+            };
+        }
+        if (tradeOffer.length > 0) {
+          tradeOffer = tradeOffer.substring(0,tradeOffer.length - 2);
+        };
+        console.log(tradeOffer);
+        $scope.playerTradeOffer = tradeOffer;
+      } else {
+        $scope.opponentResourcesForTrade = angular.copy($scope.totalResources);
+        var tradeOffer = "";
+        for (var resourceName in $scope.opponentResourcesForTrade) {
+            var resource = $scope.opponentResourcesForTrade[resourceName];
+            if (resource.amount > 0) {
+              tradeOffer += resource.amount + " " + resourceName + ", ";
+            };
+        }
+        if (tradeOffer.length > 0) {
+          tradeOffer = tradeOffer.substring(0,tradeOffer.length - 2);
+        };
+        console.log(tradeOffer);
+        $scope.opponentTradeOffer = tradeOffer;
+      }
+      $scope.userAction = tradeType;
+    }
+
     // GATHER
     $scope.gather = function() {
       $scope.userAction = 'gather';
@@ -126,7 +176,7 @@ angular.module('dwarvesOfArcadiaApp')
     $scope.showDestroy = function(destroyPlayer) {
       $scope.userAction = 'showDestroy';
       $scope.destroyNumber = destroyPlayer;
-      $scope.toDestroyPlayer = $playersNames[destroyPlayer];
+      $scope.toDestroyPlayer = $scope.playersOnGameSeq[destroyPlayer];
     }
 
     $scope.destroyResourceButton = function(index) {

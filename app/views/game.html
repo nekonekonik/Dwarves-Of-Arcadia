@@ -333,17 +333,17 @@
             </div>
             <div class="tradeWithRow">
               Trade with: 
-              <button ng-init="trade.btn0.state == false" ng-model="btn0" ng-click="trade.btn0.state = !trade.btn0.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn0.state === true]">Opponent 1</button>
-              <button ng-init="trade.btn1.state == false" ng-model="btn1" ng-click="trade.btn1.state = !trade.btn1.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn1.state === true]">Opponent 2</button>
-              <button ng-init="trade.btn2.state == false" ng-model="btn2" ng-click="trade.btn2.state = !trade.btn2.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn2.state === true]">Opponent 3</button>
+              <button ng-click="getSellingToPlayer(playersOnGameSeq[1])" ng-init="trade.btn0.state == false" ng-model="btn0" ng-click="trade.btn0.state = !trade.btn0.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn0.state === true]">{{playersOnGameSeq[1]}}</button>
+              <button ng-click="getSellingToPlayer(playersOnGameSeq[2])" ng-init="trade.btn1.state == false" ng-model="btn1" ng-click="trade.btn1.state = !trade.btn1.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn1.state === true]">{{playersOnGameSeq[2]}}</button>
+              <button ng-click="getSellingToPlayer(playersOnGameSeq[3])" ng-init="trade.btn2.state == false" ng-model="btn2" ng-click="trade.btn2.state = !trade.btn2.state" ng-class="{true:'button-enabled',false:'button-disabled'}[trade.btn2.state === true]">{{playersOnGameSeq[3]}}</button>
             </div>
             <div class="resourcesToTrade">
-              <button class="resourcesToTradePlayer">
-                
+              <button ng-click="showCalculator('Me', 'tradeOneOne')" class="resourcesToTradePlayer">
+                {{playerTradeOffer}}
               </button>
               For
-              <button class="resourcesToTradeOpponent">
-                
+              <button ng-click="showCalculator(sellingToPlayer, 'tradeOneOne')" class="resourcesToTradeOpponent">
+                {{opponentTradeOffer}}
               </button>
             </div>
           </div>
@@ -355,13 +355,13 @@
               Trade with: <em>The fastest person to agree to your trade!</em>
             </div>
             <div class="resourcesToTrade">
-              <div class="resourcesToTradePlayer">
-                
-              </div>
+             <button ng-click="showCalculator('Me', 'tradeGlobal')" class="resourcesToTradePlayer">
+                {{playerTradeOffer}}
+              </button>
               For
-              <div class="resourcesToTradeOpponent">
-                
-              </div>
+              <button ng-click="showCalculator('global', 'tradeGlobal')" class="resourcesToTradeOpponent">
+                {{opponentTradeOffer}}
+              </button>
             </div>
           </div>
           <div ng-show="userAction === 'tradeBank'" class="tradeEvent tradeBank">
@@ -372,13 +372,13 @@
               Trade with: <em>The bank, for half the amount of resources you offer</em>
             </div>
             <div class="resourcesToTrade">
-              <div class="resourcesToTradePlayer">
-                
-              </div>
+              <button ng-click="showCalculator('Me', 'tradeBank')" class="resourcesToTradePlayer">
+                {{playerTradeOffer}}
+              </button>
               For
-              <div class="resourcesToTradeOpponent">
-                
-              </div>
+              <button ng-click="showCalculator('bank', 'tradeBank')" class="resourcesToTradeOpponent">
+                {{opponentTradeOffer}}
+              </button>
             </div>
           </div>
           <button ng-show="userAction === 'tradeBank' || userAction === 'tradeGlobal' || userAction === 'tradeOneOne'" ng-click="tradeClicked" class="tradeButton">
@@ -581,9 +581,9 @@
               Get all resources produced from all your generators!
             </div>
             <div ng-show="userAction === 'destroy'" class="destroyOptions">
-              <button ng-click="showDestroy(0)">Player1</button>
-              <button ng-click="showDestroy(1)">Player2</button>
-              <button ng-click="showDestroy(2)">Player3</button>
+              <button ng-click="showDestroy(1)">Player1</button>
+              <button ng-click="showDestroy(2)">Player2</button>
+              <button ng-click="showDestroy(3)">Player3</button>
             </div>
           </div>
         </div>
@@ -603,31 +603,31 @@
         </div>
       </div>
     </div>
-    <div class="resource-calculator-modal" style="display:none;">
+    <div ng-show="userAction=='showCalculator'" class="resource-calculator-modal">
       <div class="resource-calculator-container">
         <table class="resource-calculator">
           <tr>
-            <td><img src="../images/wood-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
-            <td><img src="../images/iron-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
-            <td><img src="../images/gold-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/wood-icon.png" alt=""> <input ng-model="totalResources.Wood.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/iron-icon.png" alt=""> <input ng-model="totalResources.Iron.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/gold-icon.png" alt=""> <input ng-model="totalResources.Gold.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
           </tr>
           <tr>
-            <td><img src="../images/wood-mill-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
-            <td><img src="../images/iron-forge-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>       
-            <td><img src="../images/gold-mine-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/wood-mill-icon.png" alt=""> <input ng-model="totalResources.Woodmill.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/iron-forge-icon.png" alt=""> <input ng-model="totalResources.IronForge.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>       
+            <td><img src="../images/gold-mine-icon.png" alt=""> <input ng-model="totalResources.GoldMine.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
           </tr>
           <tr>
-            <td><img src="../images/lumber-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
-            <td><img src="../images/mithril-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>       
-            <td><img src="../images/treasure-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/lumber-icon.png" alt=""> <input ng-model="totalResources.Lumber.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/mithril-icon.png" alt=""> <input ng-model="totalResources.Mithril.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>       
+            <td><img src="../images/treasure-icon.png" alt=""> <input ng-model="totalResources.Treasure.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
           </tr>
           <tr>
-            <td><img src="../images/lumber-mill-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
-            <td><img src="../images/mithril-forge-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>       
-            <td><img src="../images/treasure-mine-icon.png" alt=""> <input type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/lumber-mill-icon.png" alt=""> <input ng-model="totalResources.Lumbermill.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
+            <td><img src="../images/mithril-forge-icon.png" alt=""> <input ng-model="totalResources.MithrilForge.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>       
+            <td><img src="../images/treasure-mine-icon.png" alt=""> <input ng-model="totalResources.TreasureMine.amount" type="text" class="resource-calculator-qty-input">&nbsp</td>
           </tr>
         </table>
-        <button class="resource-calculator-done-button button">
+        <button ng-click="closeCalculator(currentTradeType)" class="resource-calculator-done-button button">
           Done
         </button>
       </div>
