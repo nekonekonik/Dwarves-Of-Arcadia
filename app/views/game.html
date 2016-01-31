@@ -385,6 +385,34 @@
             TRADE (will be styled)
           </button>
         </div>
+        <div class="tradeEvents passive">
+          <div class="tradeEvent tradeOneOnOne passive">
+            <div class="playerActionTitle">
+              <h3>Trade - 1 on 1</h3>
+            </div>
+            <div class="tradeWithRow">
+              Trade with: 
+
+            </div>
+            <div class="resourcesToTrade">
+              <button class="resourcesToTradePlayer">
+                {{playerTradeOffer}}
+              </button>
+              For
+              <button class="resourcesToTradeOpponent">
+                {{opponentTradeOffer}}
+              </button>
+            </div>
+          </div>
+          <div class="acceptOrRejectButtons">
+            <button>
+              Accept Trade
+            </button> <br> <br>
+            <button>
+              Reject Trade
+            </button>
+          </div>
+        </div>
         <div ng-show="userAction === 'upgradeResource'" class="buildEvent upgradeResource">
           <div class="playerActionTitle">
             <h3>Upgrade resources</h3>

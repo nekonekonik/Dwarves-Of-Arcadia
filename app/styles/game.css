@@ -294,6 +294,13 @@
 	width: 90px;
 }
 
+.main-game-info-container .acceptOrRejectButtons {
+	position: absolute;
+	top: 67px;
+	right: 50px;
+	width: 90px;
+}
+
 .resource-calculator-modal {
 	background-color: rgba(0, 0, 0, 0.7);;
 	position: fixed;
