@@ -1,5 +1,8 @@
 .row {
 	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
 }
 .player-info-sheet {
 	background-size: 100% 100%;
